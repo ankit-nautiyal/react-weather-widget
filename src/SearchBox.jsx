@@ -3,10 +3,11 @@ import Button from '@mui/material/Button';
 import "./SearchBox.css"
 import { useState } from 'react';
 
+const API_URL = import.meta.env.VITE_API_URL; // WORKING
+const API_KEY = import.meta.env.VITE_API_KEY;
+
 export default function SearchBox() {
     let [city, setCity]= useState("");
-    const API_URL= "https://api.openweathermap.org/data/2.5/weather";
-    const API_KEY= "0d1aed369fb5ab77467f3b428beec0b2";
 
     let getWeatherInfo= async () => {
         let response= await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
@@ -19,6 +20,7 @@ export default function SearchBox() {
             feelsLike: jsonResponse.main.feels_like,
             weather: jsonResponse.weather[0].description,
         };
+        // console.log(jsonResponse);
         console.log(result);
     }
 
