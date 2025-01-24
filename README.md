@@ -1,7 +1,7 @@
 # Weather App
-
-## This is a simple weather app built with React.js, Vite, and Material-UI.
 ---
+## This is a simple weather app built with React.js, Vite, and Material-UI.
+
 ### Technologies Used :
 1. REACT
 2. VITE
