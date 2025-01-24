@@ -11,7 +11,7 @@
 6. JAVASCRIPT
 ---
 ### Author :
-- Ankit Nautiyal
+- Name: Ankit Nautiyal
 - Email: nautiyalankit65@gmail.com
 ---
 ### Hosted Link:
