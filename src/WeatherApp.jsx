@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function WeatherApp() {
     const [weatherInfo, setWeatherInfo]= useState({
-        city: "Delhi",
+        city: "",
         feelsLike: 24.84,
         temp: 25.2,
         tempMin: 25.05,
@@ -13,10 +13,14 @@ export default function WeatherApp() {
         weather: "haze",
     });
 
+    let updateInfo= (newInfo) =>{
+        setWeatherInfo(newInfo);
+    }
+
     return(
         <div style={{textAlign: "center"}}>
             <h2>Weather App by- Ankit Nautiyal</h2>
-            <SearchBox/>
+            <SearchBox updateInfo={updateInfo}/>
             <InfoBox info={weatherInfo}/>
         </div>
     )
