@@ -1,7 +1,11 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 import "./SearchBox.css"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+
+
 
 const API_URL = import.meta.env.VITE_API_URL; // WORKING
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -23,7 +27,6 @@ export default function SearchBox({updateInfo}) {
                 feelsLike: jsonResponse.main.feels_like,
                 weather: jsonResponse.weather[0].description,
             };
-            console.log(result);
             return result;
         }catch(error){
             throw err;
@@ -31,27 +34,56 @@ export default function SearchBox({updateInfo}) {
         
     }
 
+    useEffect(() => {
+		let randomWeather = async () => {
+			let cities = [
+				"DELHI",
+				"MUMBAI",
+				"PARIS",
+				"CHENNAI",
+				"LONDON",
+			];
+			let cityName = cities[Math.floor(Math.random() * 5)];
+			let res = await fetch(`${API_URL}?q=${cityName}&appid=${API_KEY}&units=metric`);
+			let resJson = await res.json();
+			let result = {
+				city: cityName,
+				feelsLike: resJson.main.feels_like,
+				humidity: resJson.main.humidity,
+				temp: resJson.main.temp,
+				tempMax: resJson.main.temp_max,
+				tempMin: resJson.main.temp_min,
+				weather: resJson.weather[0].description,
+			};
+			updateInfo(result);
+		};
+		randomWeather();
+	}, []);
+
     let handleChange= (event) =>{
         setCity(event.target.value);
     }
 
     let handleSubmit= async (event) =>{
+        event.preventDefault();
         try {
-            event.preventDefault();
-            console.log(city);
-            setCity("");
             let newInfo= await getWeatherInfo();
-        updateInfo(newInfo);
+            updateInfo(newInfo);
+            setError(false); // Reset the error state if the request is successful i.e.the correct city is found
         } catch (error) {
-            setError(true);
+            setError(true); // Set the error state true if the request fails i.e. city not found
+        } finally{
+            setCity(""); // Clear the input field regardless of the outcome i.ee regardless of city is found or not
         }
     }
 
     return(
         <div className='SearchBox'>     
             <form onSubmit={handleSubmit} action="">
-                <TextField required onChange={handleChange} value={city} id="city" label="City Name" variant="outlined"  /> <br /><br />
-                <Button variant="contained" type='submit'>Search</Button>
+                <TextField id="input" required onChange={handleChange} value={city} label="City Name" variant="outlined"  />
+
+                <Button id='btn' variant="contained" type='submit' endIcon={<SendIcon />} > Search</Button>
+                
                 {error && <p style={{color: "red"}}>No such place exists!</p>}
             </form>
         </div>

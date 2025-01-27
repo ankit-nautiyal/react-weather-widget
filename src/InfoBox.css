@@ -1,8 +1,56 @@
+* {
+    font-family: "Smooch Sans", serif;
+}
+
 .InfoBox{
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures vertical alignment */
 }
 
 .cardContainer{
-    display: flex;
+    /* display: flex; */
     justify-content: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.429) ;
 }
+
+.Infobox .cardContent div{
+    font-weight: bold;
+    border: none;
+}
+
+.InfoBox .card {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
+#tempInfo{
+    font-size: 17.5px;
+    line-height: 15px;
+}
+
+#img{
+    border-radius: 10px;
+    height: 175px;
+    width: 380px;
+    display: block; /* Ensures the image behaves like a block element */
+    margin: 0 auto; /* Centers the image horizontally */
+}
+
+#icon{
+    position: relative;
+    top: 4px;
+    margin-left: 4px;
+}
+
+
+
+
+
+
+
+
