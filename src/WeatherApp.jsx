@@ -23,7 +23,6 @@ export default function WeatherApp() {
             <h2>Weather App</h2>
             <SearchBox updateInfo={updateInfo}/>
             <InfoBox info={weatherInfo}/>
-            <div id="footer">Made with ❤️ by Ankit Nautiyal</div>
         </div>
     )
 }

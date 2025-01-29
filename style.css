@@ -10,3 +10,12 @@ body{
     background-position: center;
     background-attachment: fixed;
 }
+
+#footer{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+}
