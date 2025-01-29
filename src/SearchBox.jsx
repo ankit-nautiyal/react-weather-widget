@@ -73,7 +73,7 @@ export default function SearchBox({updateInfo}) {
         } catch (error) {
             setError(true); // Set the error state true if the request fails i.e. city not found
         } finally{
-            setCity(""); // Clear the input field regardless of the outcome i.ee regardless of city is found or not
+            setCity(""); // Clear the input field regardless of the outcome i.e. regardless of city is found or not
         }
     }
 
