@@ -2,6 +2,8 @@
 ---
 ## This is a simple weather app built with React.js, Vite, and Material-UI.
 
+![image](https://github.com/user-attachments/assets/74642245-1c33-4a23-9485-3baf0f4dd7aa)
+
 ### Technologies Used :
 1. REACT
 2. VITE
@@ -15,4 +17,4 @@
 - Email: nautiyalankit65@gmail.com
 ---
 ### Hosted Link:
-URL: [https://weather-widget-react-ankit.vercel.app/]
+URL: https://weather-widget-react-ankit.vercel.app/
