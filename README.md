@@ -15,4 +15,4 @@
 - Email: nautiyalankit65@gmail.com
 ---
 ### Hosted Link:
-[URL:]
+URL: [https://weather-widget-react-ankit.vercel.app/]
