@@ -1,11 +1,19 @@
-# Weather App
----
-## This is a simple weather app built with React.js, Vite, and Material-UI.
+# React based Weather Application
+
+### 🌟Features:
+
+
+- This is an API-integrated weather application built with HTML, CSS, JS, React.js, Vite, and Material-UI.
+
+- It uses the OpenWeatherMap API to fetch weather data for the given city using various parameters like temperature, maximum temperature, minimum temperature, humidity, etc.
+
+- It uses the Material-UI built-in geocoding API to fetch coordinates from the entered city.
+
 
 ![image](https://github.com/user-attachments/assets/22c06f51-84a6-4cdf-99e9-205f1bcf8cff)
 
 
-### Technologies Used :
+### 🛠️Technologies Used :
 1. REACT
 2. VITE
 3. MATERIAL-UI
