@@ -1,6 +1,5 @@
 # React-based Weather Application
 
-
 ### 🌟Features:
 
 - This is an API-integrated weather application built with HTML, CSS, JS, React.js, Vite, and Material-UI.
